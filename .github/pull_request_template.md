@@ -44,5 +44,5 @@ Discuss changes before implementing them to confirm that the problem and propose
 
 AI assistance is allowed; fully AI-generated or autonomous pull requests without meaningful human review are not accepted. See the [AI contribution policy](https://github.com/tossnet/Blazor-Calendar/blob/main/CONTRIBUTING.md#ai-contribution-policy).
 
-- [ ] I have read and followed the AI contribution policy.
+- [ ] I have read and followed the [AI contribution policy](https://github.com/tossnet/Blazor-Calendar/blob/main/CONTRIBUTING.md#ai-contribution-policy).
 - [ ] I have personally reviewed and understood all changes, tested them, and take responsibility for this contribution.

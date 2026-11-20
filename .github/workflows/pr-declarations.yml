@@ -25,14 +25,17 @@ jobs:
             process.exit(0);
           }
 
+          const policyDeclaration = 'I have read and followed the AI contribution policy.';
+          const linkedPolicyDeclaration = 'I have read and followed the [AI contribution policy](https://github.com/tossnet/Blazor-Calendar/blob/main/CONTRIBUTING.md#ai-contribution-policy).';
           const required = [
             'I have discussed this change in an issue and received maintainer agreement before implementation, or a documented exception applies.',
-            'I have read and followed the AI contribution policy.',
+            policyDeclaration,
             'I have personally reviewed and understood all changes, tested them, and take responsibility for this contribution.',
           ];
 
           const body = (pr.body ?? '').replace(/<!--[\s\S]*?-->/g, '');
           const checked = new Set(body.split(/\r?\n/).map(line => line.trim().match(/^[-*] \[[xX]\] (.+)$/)?.[1]?.trim()));
+          if (checked.has(linkedPolicyDeclaration)) checked.add(policyDeclaration);
           const missing = required.filter(declaration => !checked.has(declaration));
 
           if (missing.length > 0) {
